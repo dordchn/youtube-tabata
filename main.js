@@ -8,7 +8,7 @@ tabataPlayer.onaudioend = () => youtubePlayer.setVolume(100);
 function onYouTubeIframeAPIReady() {
   youtubePlayer = new YT.Player('player', {
     height: '390',
-    width: '640',
+    width: '100%',
     videoId: 'OPf0YbXqDm0', // OPf0YbXqDm0
     events: {
       'onReady': onPlayerReady,
@@ -19,6 +19,7 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady(event) {
   youtubePlayerReady = true;
+  console.log(youtubePlayer)
 }
 
 document.querySelector('#start_btn').addEventListener('click', evt => {

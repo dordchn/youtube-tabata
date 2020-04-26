@@ -1,13 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <div id="player"></div>
+
+<head>
+  <title>YouTubeTabata</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="title">YouTubeTabata</div>
+    <div class="youtube"><div id="player"></div></div>
     <div>
       <input type="button" id="start_btn" value="Start" />
       <input type="button" id="pause_btn" value="Pause" />
     </div>
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script src="tabata-player.js"></script>
-    <script src="main.js"></script>
-  </body>
+
+    <div class="playlist-title">Playlist</div>
+    <div class="songs">
+      <!-- 
+        Consider using thumbnail:
+        https://img.youtube.com/vi/<insert-youtube-video-id-here>/default.jpg
+      -->
+      
+        <div class="song">
+          <span class="name">Song 1</span>
+          <span class="time">4:15</span>
+        </div>
+        <div class="song">
+          <span class="name">Song 2</span>
+          <span class="time">3:57</span>
+        </div>
+        <div class="song">
+          <span class="name">Song 3</span>
+          <span class="time">5:01</span>
+        </div>
+      
+      <div class="add-song">
+        <label for="input_song">Add song: </label>
+        <input id="input_song" type="text" placeholder="E.g. https://www.youtube.com/watch?v=OPf0YbXqDm0" />
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="tabata-player.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>
