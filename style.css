@@ -21,8 +21,35 @@ body {
   margin: 0 -8px;
 }
 
-.playlist-title {
-  font-size: 26px;
+/************/
+
+.progress {
+  --progressbar-height: 30px;
+  position: relative;
+  background-color: #aaa;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#round_label {
+  position: absolute;
+  left: 0;
+  right:0;
+  color: white;
+  line-height: var(--progressbar-height);
+  font-size: 18px;
+  margin-top: 1px;
+}
+
+#progress_bar {
+  width: 10%;
+  background-color: #090;
+  height: var(--progressbar-height);
+}
+
+/************/
+.songs {
+  margin-top: 8px;
 }
 
 .song {
