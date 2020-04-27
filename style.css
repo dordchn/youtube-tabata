@@ -21,6 +21,10 @@ body {
   margin: 0 -8px;
 }
 
+.credit {
+  margin-top: 8px;
+}
+
 /************/
 
 .progress {
@@ -45,47 +49,4 @@ body {
   width: 10%;
   background-color: #0b0;
   height: var(--progressbar-height);
-}
-
-/************/
-.songs {
-  margin-top: 8px;
-}
-
-.song {
-  text-align: left;
-  border-bottom: 1px solid #aaa;
-  padding: 2px 4px;
-}
-
-.song.selected {
-  color: #090;
-  font-weight: bold;
-}
-
-.song .song-time {
-  float: right;
-}
-
-.add-song {
-  display: table;
-  width: 100%;
-  padding: 8px 0;
-}
-
-.add-song label {
-  display:table-cell;
-  width: 1px;
-  padding-right: 10px;
-  white-space: nowrap;
-}
-
-#input_song {
-  display:table-cell;
-  border: 1px solid #aaa;
-  border-radius: 4px;
-  font-family: 'Baloo Paaji 2';
-  font-size: 14px;
-  padding: 0 4px;
-  width: calc(100% - 8px);
 }

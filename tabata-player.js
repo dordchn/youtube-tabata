@@ -67,3 +67,5 @@ class TabataPlayer {
     this.audioEndCallback = callback;
   }
 }
+
+export default TabataPlayer;
