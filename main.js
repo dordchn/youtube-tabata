@@ -38,4 +38,5 @@ function onPlayerStateChange(event) {
   }
 }
 
-fetch("https://www.youtube.com/oembed?url=http://youtu.be/0zM3nApSvMg").then(console.log);
+fetch("https://www.youtube.com/oembed?url=http://youtu.be/0zM3nApSvMg&origin=https://dordchn.github.io/").then(console.log);
+// fetch("https://www.youtube.com/oembed?url=http://youtu.be/0zM3nApSvMg&origin=http://localhost:8000/").then(console.log);
