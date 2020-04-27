@@ -22,13 +22,13 @@ function onPlayerReady(event) {
   console.log(youtubePlayer)
 }
 
-document.querySelector('#start_btn').addEventListener('click', evt => {
-  if (youtubePlayerReady) {
-    youtubePlayer.playVideo();
-  }
-});
+// document.querySelector('#start_btn').addEventListener('click', evt => {
+//   if (youtubePlayerReady) {
+//     youtubePlayer.playVideo();
+//   }
+// });
 
-document.querySelector('#pause_btn').addEventListener('click', () => youtubePlayer.pauseVideo());
+// document.querySelector('#pause_btn').addEventListener('click', () => youtubePlayer.pauseVideo());
 
 function onPlayerStateChange(event) {
   if (event.data == YT.PlayerState.PLAYING) {
@@ -37,3 +37,5 @@ function onPlayerStateChange(event) {
     tabataPlayer.pause();
   }
 }
+
+fetch("https://www.youtube.com/oembed?url=http://youtu.be/0zM3nApSvMg").then(console.log);

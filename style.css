@@ -55,7 +55,7 @@ body {
 .song {
   text-align: left;
   border-bottom: 1px solid #aaa;
-  padding: 0 4px;
+  padding: 2px 4px;
 }
 
 .song.selected {
