@@ -46,7 +46,19 @@ inputSongElement.onkeydown = async evt => {
     if (videoData.error) {
       console.log(videoData.error); // TODO
     } else {
-      console.log(videoData); // TODO
+      addSong(videoData);
+      inputSongElement.value = '';
     }
   }
 }
+
+function addSong(videoData) {
+  const newSong = document.querySelector('#song_template').content.firstElementChild.cloneNode(true);
+  newSong.querySelector('.song-title').innerText = videoData.title;
+  newSong.querySelector('.song-time').innerText = videoData.time || 'Unknown';
+  document.querySelector('.songs').appendChild(newSong);
+}
+
+addSong({title: 'Song 1', time: '4:15'});
+addSong({title: 'Song 2', time: '3:57'});
+addSong({title: 'Song 3', time: '5:01'});

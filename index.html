@@ -11,37 +11,24 @@
   <div class="container">
     <div class="title">YouTube Tabata</div>
 
-    <!-- <div>
-      <input type="button" id="start_btn" value="Start" />
-      <input type="button" id="pause_btn" value="Pause" />
-    </div> -->
-
-    <div class="youtube"><div id="player"></div></div>
+    <div class="youtube">
+      <div id="player"></div>
+    </div>
 
     <div class="progress">
       <span id="round_label">Round 1</span>
       <div id="progress_bar"></div>
     </div>
 
-    <div class="songs">
-      <!-- 
-        Consider using thumbnail:
-        https://img.youtube.com/vi/<insert-youtube-video-id-here>/default.jpg
-      -->
-      
-        <div class="song">
-          <span class="name">Song 1</span>
-          <span class="time">4:15</span>
-        </div>
-        <div class="song">
-          <span class="name">Song 2</span>
-          <span class="time">3:57</span>
-        </div>
-        <div class="song">
-          <span class="name">Song 3</span>
-          <span class="time">5:01</span>
-        </div>
-      
+    <div class="playlist">
+      <div class="songs">
+        <template id="song_template">
+          <div class="song">
+            <span class="song-title"></span>
+            <span class="song-time"></span>
+          </div>
+        </template>
+      </div>
       <div class="add-song">
         <label for="input_song">Add song: </label>
         <input id="input_song" type="text" placeholder="E.g. https://www.youtube.com/watch?v=OPf0YbXqDm0" />

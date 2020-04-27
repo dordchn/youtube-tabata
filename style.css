@@ -63,12 +63,8 @@ body {
   font-weight: bold;
 }
 
-.song .time {
+.song .song-time {
   float: right;
-}
-
-.song:last-of-type {
-    border-bottom: none;
 }
 
 .add-song {
