@@ -38,5 +38,15 @@ function onPlayerStateChange(event) {
   }
 }
 
-fetch("https://www.youtube.com/oembed?url=http://youtu.be/0zM3nApSvMg&origin=https://dordchn.github.io/").then(console.log);
-// fetch("https://www.youtube.com/oembed?url=http://youtu.be/0zM3nApSvMg&origin=http://localhost:8000/").then(console.log);
+const inputSongElement = document.querySelector('#input_song');
+inputSongElement.onkeydown = async evt => {
+  if (evt.keyCode == 13 && inputSongElement.value) {
+    const stream = await fetch(`https://noembed.com/embed?url=${inputSongElement.value}`);
+    const videoData = await stream.json();
+    if (videoData.error) {
+      console.log(videoData.error); // TODO
+    } else {
+      console.log(videoData); // TODO
+    }
+  }
+}
