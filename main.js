@@ -19,7 +19,6 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady(event) {
   youtubePlayerReady = true;
-  console.log(youtubePlayer)
 }
 
 // document.querySelector('#start_btn').addEventListener('click', evt => {
@@ -37,28 +36,3 @@ function onPlayerStateChange(event) {
     tabataPlayer.pause();
   }
 }
-
-const inputSongElement = document.querySelector('#input_song');
-inputSongElement.onkeydown = async evt => {
-  if (evt.keyCode == 13 && inputSongElement.value) {
-    const stream = await fetch(`https://noembed.com/embed?url=${inputSongElement.value}`);
-    const videoData = await stream.json();
-    if (videoData.error) {
-      console.log(videoData.error); // TODO
-    } else {
-      addSong(videoData);
-      inputSongElement.value = '';
-    }
-  }
-}
-
-function addSong(videoData) {
-  const newSong = document.querySelector('#song_template').content.firstElementChild.cloneNode(true);
-  newSong.querySelector('.song-title').innerText = videoData.title;
-  newSong.querySelector('.song-time').innerText = videoData.time || 'Unknown';
-  document.querySelector('.songs').appendChild(newSong);
-}
-
-addSong({title: 'Song 1', time: '4:15'});
-addSong({title: 'Song 2', time: '3:57'});
-addSong({title: 'Song 3', time: '5:01'});

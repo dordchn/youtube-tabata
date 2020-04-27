@@ -21,23 +21,13 @@
     </div>
 
     <div class="playlist">
-      <div class="songs">
-        <template id="song_template">
-          <div class="song">
-            <span class="song-title"></span>
-            <span class="song-time"></span>
-          </div>
-        </template>
-      </div>
-      <div class="add-song">
-        <label for="input_song">Add song: </label>
-        <input id="input_song" type="text" placeholder="E.g. https://www.youtube.com/watch?v=OPf0YbXqDm0" />
-      </div>
+      <x-playlist></x-playlist>
     </div>
   </div>
 
 
   <script src="https://www.youtube.com/iframe_api"></script>
+  <script type="module" src="components/playlist.js"></script>
   <script src="tabata-player.js"></script>
   <script src="main.js"></script>
 </body>
