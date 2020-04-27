@@ -21,6 +21,10 @@ body {
   margin: 0 -8px;
 }
 
+.credit {
+  margin-top: 8px;
+}
+
 /************/
 
 .progress {
