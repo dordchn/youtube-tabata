@@ -1,3 +1,4 @@
+import TabataPlayer from './tabata-player.js';
 
 let youtubePlayer;
 let youtubePlayerReady = false;
@@ -5,7 +6,7 @@ const tabataPlayer = new TabataPlayer();
 tabataPlayer.onaudiostart = () => youtubePlayer.setVolume(40);
 tabataPlayer.onaudioend = () => youtubePlayer.setVolume(100);
 
-function onYouTubeIframeAPIReady() {
+window.onYouTubeIframeAPIReady = function() {
   youtubePlayer = new YT.Player('player', {
     height: '390',
     width: '100%',
@@ -17,7 +18,7 @@ function onYouTubeIframeAPIReady() {
   });
 }
 
-function onPlayerReady(event) {
+window.onPlayerReady = function(event) {
   youtubePlayerReady = true;
 }
 
@@ -29,7 +30,7 @@ function onPlayerReady(event) {
 
 // document.querySelector('#pause_btn').addEventListener('click', () => youtubePlayer.pauseVideo());
 
-function onPlayerStateChange(event) {
+window.onPlayerStateChange = function(event) {
   if (event.data == YT.PlayerState.PLAYING) {
     tabataPlayer.play();
   } else if (event.data == YT.PlayerState.PAUSED) {
