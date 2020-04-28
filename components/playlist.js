@@ -50,9 +50,9 @@ const define = (html) => {
     addSong(videoData) {
       const newSong = this.songTemplateNode.cloneNode(true);
       newSong.querySelector('.title').innerText = videoData.title;
-      newSong.querySelector('.time').innerText = videoData.time || 'Unknown';
       newSong.setAttribute('data-video-id', videoData.videoId || '');
       newSong.querySelector('.title').onclick = () => this.selectSong(newSong);
+      newSong.querySelector('.remove').onclick = () => newSong.parentNode.removeChild(newSong);
       this.songs.appendChild(newSong);
     }
 
