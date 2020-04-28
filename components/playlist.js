@@ -17,7 +17,8 @@ const define = (html) => {
           const videoData = await this.getVideoData(songInput.value);
           console.log(videoData)
           if (videoData.error) {
-            console.log(videoData.error); // TODO
+            songInput.classList.add('error');
+            setTimeout(()=> songInput.classList.remove('error'), 10);
           } else {
             this.addSong(videoData);
             songInput.value = '';
