@@ -1,10 +1,10 @@
-import TabataPlayer from './tabata-player.js';
-
 let youtubePlayer;
 let youtubePlayerReady = false;
-const tabataPlayer = new TabataPlayer();
-tabataPlayer.onaudiostart = () => youtubePlayer.setVolume(40);
-tabataPlayer.onaudioend = () => youtubePlayer.setVolume(100);
+const tabataPlayer = document.querySelector('tabata-player');
+window.onload = () => {
+  tabataPlayer.onaudiostart = () => youtubePlayer.setVolume(40);
+  tabataPlayer.onaudioend = () => youtubePlayer.setVolume(100);  
+}
 
 window.onYouTubeIframeAPIReady = function() {
   youtubePlayer = new YT.Player('player', {
