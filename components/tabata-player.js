@@ -29,6 +29,9 @@ const define = (html) => {
       for (let i = 1; i <= 8; i++) {
         this.audio_rounds.push(new Audio(`sounds/round_${i}.mp3`));
       }
+
+      // Init
+      this.reset();
     }
 
     prepareEvents() {
@@ -49,6 +52,12 @@ const define = (html) => {
         addLabelEvent(startTime + 30, round < 8 ? 'Rest' : 'Completed');
       }
       console.log(this.tabataData);
+    }
+
+    reset() {
+      this.stop();
+      this.progressBar.style.width = '0%';
+      this.progressLabel.innerText = 'Get ready';
     }
 
     play() {
@@ -82,13 +91,10 @@ const define = (html) => {
     }
 
     stop() {
-      pauseTabata();
-      tabataTime = 0;
+      this.pause();
+      this.tabataTime = 0;
     }
 
-    set dor(val) {
-      alert(val);
-    }
     set onaudiostart(callback) {
       this.audioStartCallback = callback;
     }
