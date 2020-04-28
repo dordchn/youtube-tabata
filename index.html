@@ -11,19 +11,9 @@
 <body>
   <div class="container">
     <div class="title">YouTube Tabata</div>
-
-    <div class="youtube">
-      <div id="player"></div>
-    </div>
-
-    <div class="progress">
-      <span id="round_label">Get ready</span>
-      <div id="progress_bar"></div>
-    </div>
-
-    <div class="playlist">
-      <x-playlist></x-playlist>
-    </div>
+    <div class="youtube"><div id="player"></div></div>
+    <tabata-player></tabata-player>
+    <x-playlist></x-playlist>
   </div>
 
   <div class="credit">
@@ -36,6 +26,7 @@
   </div>
 
   <script type="module" src="components/playlist.js"></script>
+  <script type="module" src="components/tabata-player.js"></script>
   <script type="module" src="main.js"></script>
 
   <script src="https://www.youtube.com/iframe_api" defer></script>
