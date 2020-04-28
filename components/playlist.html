@@ -22,8 +22,10 @@
     font-weight: bold;
   }
 
-  .song .time {
+  .song .remove {
     float: right;
+    cursor: pointer;
+    user-select: none;
   }
 
   .add-song {
@@ -60,7 +62,7 @@
   <template id="song_template">
     <div class="song">
       <span class="title"></span>
-      <span class="time"></span>
+      <span class="remove">Remove</span>
     </div>
   </template>
 </div>
