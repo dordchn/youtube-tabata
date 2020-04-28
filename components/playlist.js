@@ -29,6 +29,7 @@ const define = (html) => {
 
       Promise.all([
         'https://www.youtube.com/watch?v=OPf0YbXqDm0',
+        'https://www.youtube.com/watch?v=1w7OgIMMRc4',
         'https://www.youtube.com/watch?v=7wtfhZwyrcc'
       ].map(url => this.getVideoData(url)))
         .then(videosData => videosData.forEach(videoData => this.addSong(videoData)));
