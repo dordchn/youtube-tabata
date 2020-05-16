@@ -2,18 +2,29 @@ body {
   background-color: #aaa;
   text-align: center;
   font-family: 'Baloo Paaji 2';
+  --side-padding: 8px;
 }
 
 .container {
-  --side-padding: 8px;
-  width: calc(800px - 2*var(--side-padding));
   margin: 0 auto;
   padding: 0 var(--side-padding);
   background-color: white;
   border-radius: 10px;
 }
 
-.title { 
+@media (min-width:801px) { /* landscape tablets, laptops ands desktops */
+  .container {
+    width: calc(800px - 2*var(--side-padding));
+  }
+}
+
+@media (max-width:800px) { /* phones, portrait tablets */
+  .container {
+    width: calc(100% - 2*var(--side-padding));
+  }
+}
+
+.title {
   font-size: 48px;
 }
 
